@@ -29,7 +29,7 @@ class Test_SauceDemo:
 
     def test_passwordRequired(self):
         usernameInput = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"user-name")))
-        usernameInput.send_keys("standard_user")
+        usernameInput.send_keys("Doğukan")
         passwordInput = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"password")))
         passwordInput.send_keys("")
         loginButton = self.driver.find_element(By.ID,"login-button")
@@ -57,6 +57,6 @@ class Test_SauceDemo:
         passwordInput.send_keys("secret_sauce")
         loginButton = self.driver.find_element(By.ID,"login-button")
         loginButton.click()
-        sleep(5)
-        listOfInventories = self.driver.find_elements(By.CLASS_NAME,"inventory_item")
-        assert len(listOfInventories) == 6
+        sleep(2)
+        numberOfLists = self.driver.find_elements(By.CLASS_NAME,"inventory_item")
+        assert len(numberOfLists) == 6
